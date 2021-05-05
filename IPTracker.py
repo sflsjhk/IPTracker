@@ -10,7 +10,7 @@ class IPTracker:
         self.ip_counter = defaultdict(int)
 
     # Input IP: Str
-    # Output 1:int for success operation
+    # Output 1 for success operation, 0 for for empty input
     def request_handled(self, ip_address: str):
         if not ip_address:
             return 0
