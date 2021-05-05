@@ -25,7 +25,9 @@ The method has time complexity of O(1), Space Compelxity O(1).
 
 **What would you do differently if you had more time?**
 
-I would think more about developing a system that handles load better, most likely creating a mechanism to parallel process the input data. By having multiple threads handling the reuqest, and using a mutex mechanism to update the count for each IPs. This should sigfnificantly increase the system's ability to handle the requests.
+Coding wise, I would implement more mechanism for code security, such as IP address validation, input protection etc. Having more test cases to test out edge cases, such as bad format/values of input.
+
+Performance wise, I would think more about developing a system that handles load better, most likely creating a mechanism to parallel process the input data. By having multiple threads handling the reuqest, and using a mutex mechanism to update the count for each IPs. This should sigfnificantly increase the system's ability to handle the requests.
 
 **What other approaches did you decide not to pursue?**
 
