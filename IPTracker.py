@@ -12,6 +12,8 @@ class IPTracker:
     # Input IP: Str
     # Output 1:int for success operation
     def request_handled(self, ip_address: str):
+        if not ip_address:
+            return 0
         # O(1)
         self.ip_counter[ip_address] += 1
         return 1

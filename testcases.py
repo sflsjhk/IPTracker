@@ -6,7 +6,11 @@ iptracker.TOP_K_FREQUENT_IP = 3
 
 # Test request_handled method by mocking several IP inputs, test if system stores all Ips
 iptracker.request_handled("192.168.1.1")
-iptracker.request_handled("192.168.1.2")
+# Test Good input
+print(iptracker.request_handled("192.168.1.2"))
+# Test Null input
+print(iptracker.request_handled(""))
+
 iptracker.request_handled("192.168.1.1")
 iptracker.request_handled("192.168.1.1")
 iptracker.request_handled("192.168.1.2")
