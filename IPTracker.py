@@ -24,7 +24,7 @@ request_handled:
             if heap size < 100, insert
 
 top100:
-    go through every node in the heap array, put each IP in a return array, return the array.
+    return the heap array.
 
 """
 
