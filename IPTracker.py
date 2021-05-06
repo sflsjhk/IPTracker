@@ -19,7 +19,7 @@ request_handled:
         1. create node for the new IP address
         2. update dict[ip].count
         3. try to insert node into heap tree 
-            if heap size = 100, check if its count is bigger than least value in the tree,
+            if heap size = 100, check if its count is bigger than a count value in the tree,
             if so, swap and update. if not, do not insert
             if heap size < 100, insert
 
@@ -39,6 +39,7 @@ class IPTracker:
 
     # Input IP: Str
     # Output 1 for success operation, 0 for for empty input
+    # O(log100)
     def request_handled(self, ip_address: str):
         if not ip_address:
             return 0
@@ -56,6 +57,7 @@ class IPTracker:
         return 1
     
     # Output list of top 100 IPs.
+    # O(1)
     def top100(self):
         return self.heap
     
