@@ -1,5 +1,45 @@
-# IPTracker
-## Design and Implementation
+# IPTracker V2
+
+## Improved Design and Implementation
+
+The IP tracker system is initiated with 
+
+1. a hash table(defaultlist), ip_counter, which stores the IP address and its occurence count. 
+
+2. a heap array list, heap, which stores a max-heap tree structure using index. ![Structure](Structure.png)
+
+3. a Node class. A class for representing IPs in tree implementation. Includes IP, count, index(position at heap array).
+
+**request_handled(ip_address)**
+When getting an IP:
+    
+    check if ip in dict:
+    
+    if yes:
+        1. update dict[ip].count. O(1) operation
+        2. update the Ip's node's count. If count is greater than parent,
+           swap location with parent. O(log(100)) operation
+
+    if not:
+        1. create node for the new IP address. 
+        2. update dict[ip].count. O(1) operation
+        3. try to insert node into heap tree. O(log(100)) operation
+            if heap size = 100, check if its count is bigger than a count value in the tree,
+            if so, swap and update. if not, do not insert.
+            if heap size < 100, insert.
+
+The insertion and update operation in the tree is O(log(100)) time complexity as we have a fixed size of 100 for the heap tree, and moving an element has a max  log(100) time complexity.
+
+**top100()**
+
+Simply return the existing heap array. O(1) operation.
+
+**clear()**
+
+The clear() cleans out key and values of the system's hash table and heap array.
+The method has time complexity of O(1), Space Compelxity O(1).
+
+## Original Design and Implementation
 The system is implemented by Python, the code runs well with the test cases that are included in the Repo. 
 
 The IP tracker system is initiated with a hash table(defaultlist), ip_counter, which stores the IP address and its occurence count. 
